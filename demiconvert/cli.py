@@ -2,9 +2,9 @@
 """UnitConverter (CLI)
 
 Usage:
-    cli.py <args>... [-d N] [h]
-    cli.py base <num> <ibase> [<obase>] [h]
     cli.py rot <msg>... [-s N] [h]
+    cli.py base <num> <ibase> [<obase>] [h]
+    cli.py <args>... [-d N] [h]
 
 Options:
     -d, --decimals=N  Number of decimal places. [default: 10]
@@ -29,9 +29,9 @@ from conversion import Base, Data, Length, Volume, Weight, rot
 
 class CLIConverter(object):
 
-    def __init__(self):
+    def __init__(self, args):
         "Read command-line arguments, assign to self and start the conversion."
-        self.args = docopt(__doc__, version="0.1")
+        self.args = args
 
         if self.args["rot"]:
             self.start_caesar_conversion()
@@ -176,5 +176,10 @@ class CLIConverter(object):
         sys.exit()
 
 
+def main():
+    args = docopt(__doc__, version="0.1")
+    c = CLIConverter(args)
+
+    
 if __name__ == "__main__":
-    c = CLIConverter()
+    main()

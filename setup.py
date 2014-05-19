@@ -25,6 +25,8 @@ setup(
     author="Max Demian",
     author_email="mikar@gmx.de",
     packages=[_name],
+    package_data={_name: ["icon.png"]},
+    install_package_data=True,
     entry_points={
                   "console_scripts": [
                       "{0} = {0}.cli:main".format(_name),

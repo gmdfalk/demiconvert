@@ -28,7 +28,7 @@ class GUIConverter(QtGui.QWidget):
         # Main Window
         self.setGeometry(300, 300, 350, 300)
         self.setWindowTitle("UnitConverter")
-        self.setWindowIcon(QtGui.QIcon("data/calculator.png"))
+        self.setWindowIcon(QtGui.QIcon("icon.png"))
 
         QtGui.QToolTip.setFont(QtGui.QFont("SansSerif", 10))
 

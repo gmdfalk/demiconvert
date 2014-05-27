@@ -18,6 +18,7 @@ Examples:
     cli.py rot this is the message -s 10
     cli.py base "100" 2 16 (NYI, this would convert binary 100 to hex)
 """
+# commit test
 from string import digits, punctuation
 import re
 import sys
@@ -180,6 +181,6 @@ def main():
     args = docopt(__doc__, version="0.1")
     c = CLIConverter(args)
 
-    
+
 if __name__ == "__main__":
     main()
